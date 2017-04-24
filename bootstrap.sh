@@ -49,7 +49,7 @@ pip install mysqlclient
 python manage.py check
 python manage.py migrate
 ./make_style.sh
-python manage.py collectstatic
+echo "yes" | python manage.py collectstatic
 python manage.py compilemessages
 python manage.py compilejsi18n
 python manage.py loaddata navbar

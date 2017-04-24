@@ -41,7 +41,18 @@ mkdir -p /vagrant/dmoj
 
 git clone https://github.com/Minkov/site.git /vagrant/dmoj/site
 cd /vagrant/dmoj/site
+git pull
 git submodule init
 git submodule update
+pip install -r requirements.txt
+pip install mysqlclient
+python manage.py check
+python manage.py migrate
+./make_style.sh
+python manage.py collectstatic
+python manage.py compilemessages
+python manage.py compilejsi18n
+python manage.py loaddata navbar
+python manage.py loaddata language_small
 cd -
 

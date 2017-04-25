@@ -41,7 +41,7 @@ mkdir -p /vagrant/dmoj/files
 
 DMOJ_DIR=/vagrant/dmoj
 SITE_DIR=$DMOJ_DIR/site
-FILES_DIR=$DMOJ_DIR/files
+FILES_DIR=/vagrant/files
 
 git clone https://github.com/Minkov/site.git $SITE_DIR 
 cd $SITE_DIR

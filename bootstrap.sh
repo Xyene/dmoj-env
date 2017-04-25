@@ -64,9 +64,9 @@ cd /vagrant/files
 
 curl http://uwsgi.it/install | bash -s default $PWD/uwsgi
 
-cp $SITE_DIR/files/site.conf /etc/supervisor/conf.d/site.conf
-cp $SITE_DIR/files/bridged.conf /etc/supervisor/conf.d/bridged.conf
-cp $SITE_DIR/files/nginx.conf /etc/nginx/conf.d/nginx.conf
+cp $FILES_DIR/site.conf /etc/supervisor/conf.d/site.conf
+cp $FILES_DIR/bridged.conf /etc/supervisor/conf.d/bridged.conf
+cp $FILES_DIR/nginx.conf /etc/nginx/conf.d/nginx.conf
 
 sudo systemctl restart supervisor
 sudo service nginx reload

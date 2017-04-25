@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 apt-get update
-apt-get install -y python-dev supervisor nginx git gcc g++ make python-dev libxml2-dev libxslt1-dev zlib1g-dev ruby-sass gettext curl uwsgi
+apt-get install -y python-dev supervisor nginx git gcc g++ make python-dev libxml2-dev libxslt1-dev zlib1g-dev ruby-sass gettext curl
 
 wget -q --no-check-certificate -O- https://bootstrap.pypa.io/get-pip.py | sudo python
 wget -O- https://deb.nodesource.com/setup_7.x | sudo -E bash -
@@ -59,8 +59,13 @@ python manage.py compilejsi18n
 python manage.py loaddata navbar
 python manage.py loaddata language_small
 
+mkdir -p /vagrant/files
+
+curl http://uwsgi.it/install | bash -s default $PWD/uwsgi
+
+
 cp $SITE_DIR/files/site.conf /etc/supervisor/conf.d/site.conf
-cp $SITE_DIR/files/bridged.conf /etc/supervisor/conf.d/site.conf
+cp $SITE_DIR/files/bridged.conf /etc/supervisor/conf.d/bridged.conf
 cp $SITE_DIR/files/nginx.conf /etc/nginx/conf.d/nginx.conf
 
 sudo systemctl restart supervisor

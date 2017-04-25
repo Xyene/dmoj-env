@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 apt-get update
-apt-get install -y python-dev supervisor nginx git gcc g++ make python-dev libxml2-dev libxslt1-dev zlib1g-dev ruby-sass gettext curl
+apt-get install -y python-dev supervisor nginx git gcc g++ make python-dev libxml2-dev libxslt1-dev zlib1g-dev ruby-sass gettext curl uwsgi
 
 wget -q --no-check-certificate -O- https://bootstrap.pypa.io/get-pip.py | sudo python
 wget -O- https://deb.nodesource.com/setup_7.x | sudo -E bash -
@@ -37,10 +37,14 @@ if ! [ -L /var/www ]; then
     ln -fs /vagrant /var/www
 fi
 
-mkdir -p /vagrant/dmoj
+mkdir -p /vagrant/dmoj/files
 
-git clone https://github.com/Minkov/site.git /vagrant/dmoj/site
-cd /vagrant/dmoj/site
+DMOJ_DIR=/vagrant/dmoj
+SITE_DIR=$DMOJ_DIR/site
+FILES_DIR=$DMOJ_DIR/files
+
+git clone https://github.com/Minkov/site.git $SITE_DIR 
+cd $SITE_DIR
 git pull
 git submodule init
 git submodule update
@@ -54,5 +58,10 @@ python manage.py compilemessages
 python manage.py compilejsi18n
 python manage.py loaddata navbar
 python manage.py loaddata language_small
-cd -
 
+cp $SITE_DIR/files/site.conf /etc/supervisor/conf.d/site.conf
+cp $SITE_DIR/files/bridged.conf /etc/supervisor/conf.d/site.conf
+cp $SITE_DIR/files/nginx.conf /etc/nginx/conf.d/nginx.conf
+
+sudo systemctl restart supervisor
+sudo service nginx reload

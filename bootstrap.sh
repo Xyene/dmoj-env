@@ -60,9 +60,9 @@ python manage.py loaddata navbar
 python manage.py loaddata language_small
 
 mkdir -p /vagrant/files
+cd /vagrant/files
 
 curl http://uwsgi.it/install | bash -s default $PWD/uwsgi
-
 
 cp $SITE_DIR/files/site.conf /etc/supervisor/conf.d/site.conf
 cp $SITE_DIR/files/bridged.conf /etc/supervisor/conf.d/bridged.conf

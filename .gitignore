@@ -1,1 +1,5 @@
 .vagrant
+
+# Python files
+__pycache__/
+*.py[cod]

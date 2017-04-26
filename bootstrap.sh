@@ -21,7 +21,7 @@ echo -e "\n--- Setting up our MySQL user and db ---\n"
 mysql -uroot -pvagrant -e "CREATE DATABASE dmoj" 
 mysql -uroot -pvagrant -e "grant all privileges on dmoj.* to 'vagrant'@'localhost' identified by 'vagrant'" 
 
-sudo /etc/init.d/mysql restart
+sudo systemctl restart mysql
 
 wget -q --no-check-certificate -O- https://bootstrap.pypa.io/get-pip.py | sudo python
 
@@ -69,4 +69,4 @@ cp $FILES_DIR/bridged.conf /etc/supervisor/conf.d/bridged.conf
 cp $FILES_DIR/nginx.conf /etc/nginx/conf.d/nginx.conf
 
 sudo systemctl restart supervisor
-sudo service nginx reload
+sudo systemctl reload-or-restart nginx

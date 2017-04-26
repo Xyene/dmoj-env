@@ -1,1 +1,1 @@
-[Useful commands](./commands.md)
+[Useful vagrant commands](./commands.md)

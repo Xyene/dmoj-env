@@ -1,30 +1,30 @@
-# Commands
+# Vagrant commands
 
-## Creating the VM
+- Creating the VM
 
 ```sh
 vagrant up --provider virtualbox
 ```
 
-## Update shutdown VM
+- Update shutdown VM
 
 ```sh
 vagrant up --provision
 ```
 
-## Restart running VM
+- Restart running VM
 
 ```sh
 vagrant reload --provision
 ```
 
-## Delete VM
+- Delete VM
 
 ```sh
 vagrant destroy
 ```
 
-## Connect to VM
+- Connect to VM
 
 ```sh
 vagrant ssh

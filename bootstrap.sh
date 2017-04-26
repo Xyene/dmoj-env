@@ -3,7 +3,7 @@
 apt-get update
 apt-get install -y python-dev supervisor nginx git gcc g++ make python-dev libxml2-dev libxslt1-dev zlib1g-dev ruby-sass gettext curl
 
-wget -q --no-check-certificate -O- https://bootstrap.pypa.io/get-pip.py | sudo python
+wget -q -O- https://bootstrap.pypa.io/get-pip.py | sudo python
 wget -O- https://deb.nodesource.com/setup_7.x | sudo -E bash -
 apt-get update
 apt-get -y install nodejs
@@ -23,7 +23,7 @@ mysql -uroot -pvagrant -e "grant all privileges on dmoj.* to 'vagrant'@'localhos
 
 sudo systemctl restart mysql
 
-wget -q --no-check-certificate -O- https://bootstrap.pypa.io/get-pip.py | sudo python
+wget -q -O- https://bootstrap.pypa.io/get-pip.py | sudo python
 
 pip install virtualenv
 

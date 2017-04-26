@@ -11,4 +11,4 @@ echo -e "\n--- Setting up our MySQL user and db ---\n"
 mysql -uroot -pvagrant -e "CREATE DATABASE dmoj" >> "$LOGS_FILE" 
 mysql -uroot -pvagrant -e "grant all privileges on dmoj.* to 'vagrant'@'localhost' identified by 'vagrant'" >> "$LOGS_FILE" 
 
-sudo /etc/init.d/mysql restarti >> "$LOGS_FILE"
+sudo systemctl restart mysql >> "$LOGS_FILE"

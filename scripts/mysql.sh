@@ -4,8 +4,9 @@ LOGS_FILE=$1/`basename "$0"`.log
 
 echo -e "\n--- Install MySQL specific packages and settings ---\n"
 
-debconf-set-selections <<< "mysql-server mysql-server/root_password password vagrant"
-debconf-set-selections <<< "mysql-server mysql-server/root_password_again password vagrant"
+echo "mysql-server mysql-server/root_password password vagrant"       | debconf-set-selections
+echo "mysql-server mysql-server/root_password_again password vagrant" | debconf-set-selections
+
 apt-get -y install mysql-server  libmysqlclient-dev >> "$LOGS_FILE" 
 
 echo -e "\n--- Setting up our MySQL user and db ---\n"

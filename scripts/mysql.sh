@@ -1,8 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 LOGS_FILE=$1/`basename "$0"`.log
 
 echo -e "\n--- Install MySQL specific packages and settings ---\n"
+
 debconf-set-selections <<< "mysql-server mysql-server/root_password password vagrant"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password vagrant"
 apt-get -y install mysql-server  libmysqlclient-dev >> "$LOGS_FILE" 

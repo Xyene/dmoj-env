@@ -2,6 +2,7 @@
 
 echo -e "\n --- Find all logs in /vagrant/logs ---\n"
 LOGS_DIR=/vagrant/logs
+rm -r $LOGS_DIR
 mkdir -p $LOGS_DIR
 
 echo -e "\n --- Installing apt-get dependendies ---\n"
@@ -19,6 +20,8 @@ sh /vagrant/scripts/mysql.sh $LOGS_DIR
 DMOJ_DIR=/vagrant/dmoj
 SITE_DIR=$DMOJ_DIR/site
 FILES_DIR=/vagrant/files
+
+sh /vagrant/scripts/virtualenv-setup.sh $LOGS_DIR
 
 echo -e "\n --- Checkout web app --- \n"
 sh /vagrant/scripts/checkout-app.sh $LOGS_DIR $SITE_DIR

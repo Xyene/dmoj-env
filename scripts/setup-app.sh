@@ -9,7 +9,9 @@ pip install -r requirements.txt >> "$LOGS_FILE"
 pip install mysqlclient >> "$LOGS_FILE"
 python manage.py check >> "$LOGS_FILE"
 python manage.py migrate >> "$LOGS_FILE"
+
 ./make_style.sh >> "$LOGS_FILE"
+
 echo "yes" | python manage.py collectstatic >> "$LOGS_FILE"
 python manage.py compilemessages >> "$LOGS_FILE"
 python manage.py compilejsi18n >> "$LOGS_FILE"

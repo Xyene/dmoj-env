@@ -3,3 +3,7 @@
 # Python files
 __pycache__/
 *.py[cod]
+
+AWS_KEY.pem
+aws-credentials
+logs

@@ -4,9 +4,13 @@ LOGS_FILE=$1/`basename "$0"`.log
 SITE_DIR=$2
 cd $SITE_DIR
 
+npm install >> "$LOGS_FILE"
+
 # source /envs/dmoj/bin/activate
 pip install -r requirements.txt >> "$LOGS_FILE"
 pip install mysqlclient >> "$LOGS_FILE"
+pip install websocket-client >> "$LOGS_FILE"
+
 python manage.py check >> "$LOGS_FILE"
 python manage.py migrate >> "$LOGS_FILE"
 

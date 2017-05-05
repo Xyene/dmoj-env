@@ -1,0 +1,11 @@
+id: TelerikAcademyJudge
+key: "IAXAToMg?>W4(]bS~7L@OVM|Rz]i@_8u+j,+{pY(lyi%8$tF-q_@P+)c2}n!N*j+49@/rxPo5~~!8[gx2jSDrX/,X:+Z?7|&#*R+"
+problem_storage_root: /vagrant/problems
+runtime:
+  g++11: /usr/bin/g++-5
+  g++14: /usr/bin/g++-5
+  gcc: /usr/bin/gcc
+  mono: /usr/bin/mono
+  mono-csc: /usr/bin/mono-csc
+  python: /usr/bin/python2.7
+  python3: /usr/bin/python3.5

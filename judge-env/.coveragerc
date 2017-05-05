@@ -1,0 +1,20 @@
+[report]
+exclude_lines =
+    pragma: no cover
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    except ImportError:
+    except OSError:
+    freebsd
+
+ignore_errors = True
+
+[run]
+omit =
+    dmoj/executors/FS.py
+    dmoj/executors/VC.py
+
+    dmoj/cli.py
+    dmoj/packet.py
+    dmoj/executors/autoconfig.py

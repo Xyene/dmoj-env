@@ -13,6 +13,10 @@ Vagrant.configure(2) do |config|
     config.vm.provider 'virtualbox' do |virtualbox, override|
         config.vm.box = "gbarbieru/xenial"
         config.vm.network "forwarded_port", guest: 80, host: 8081
+        config.vm.network "forwarded_port", guest: 3000, host: 3000
+        config.vm.network "forwarded_port", guest: 9001, host: 9001
+        config.vm.network "forwarded_port", guest: 9002, host: 9002
+        config.vm.network "forwarded_port", guest: 9003, host: 9003
     end
     config.vm.provider 'aws' do |aws, override|
         aws.access_key_id = ENV['AWS_KEY']

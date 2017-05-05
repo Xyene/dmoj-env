@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+source bash /vagrant/envvars.sh
+
 echo -e "\n --- Find all logs in /vagrant/logs ---\n"
 LOGS_DIR=/vagrant/logs
 rm -r $LOGS_DIR

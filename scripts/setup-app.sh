@@ -17,3 +17,9 @@ python manage.py compilemessages >> "$LOGS_FILE"
 python manage.py compilejsi18n >> "$LOGS_FILE"
 python manage.py loaddata navbar >> "$LOGS_FILE"
 python manage.py loaddata language_small >> "$LOGS_FILE"
+
+echo -e "Creating superuser!"
+
+echo -e "$SUPERUSER_USERNAME\n$SUPERUSER_EMAIL\n$SUPERUSER_PWD\n$SUPERUSER_RPT_PWD" | python manage.py createsuperuser
+
+echo -e "Superuser created!"

@@ -1,11 +1,23 @@
-id: TelerikAcademyJudge
-key: "IAXAToMg?>W4(]bS~7L@OVM|Rz]i@_8u+j,+{pY(lyi%8$tF-q_@P+)c2}n!N*j+49@/rxPo5~~!8[gx2jSDrX/,X:+Z?7|&#*R+"
-problem_storage_root: /vagrant/problems
+id: MacJudge
+key: "-zK*MT,J%T-(vl|&4&l)`>sP3IEYP%ZdaLUFhCoW@u>VgJbq3_Hu=CPIjsfZzJ#0M)DLNo}AgS`8rKC%R+uZ6oK2X8tW?~Px{hJ="
+problem_storage_root: problems
 runtime:
+  as_x64: /usr/bin/x86_64-linux-gnu-as
+  as_x86: /usr/bin/as
+  awk: /usr/bin/mawk
+  cat: /bin/cat
+  g++: /usr/bin/g++
   g++11: /usr/bin/g++-5
   g++14: /usr/bin/g++-5
   gcc: /usr/bin/gcc
+  java8: /usr/lib/jvm/java-8-openjdk-amd64/bin/java
+  java9: /usr/lib/jvm/java-9-openjdk-amd64/bin/java
+  javac8: /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+  javac9: /usr/lib/jvm/java-9-openjdk-amd64/bin/javac
+  ld_x64: /usr/bin/x86_64-linux-gnu-ld
+  ld_x86: /usr/bin/ld
   mono: /usr/bin/mono
   mono-csc: /usr/bin/mono-csc
-  python: /usr/bin/python2.7
+  perl: /usr/bin/perl
   python3: /usr/bin/python3.5
+  sed: /bin/sed

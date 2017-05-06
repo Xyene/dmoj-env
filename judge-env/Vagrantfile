@@ -10,9 +10,14 @@ require 'vagrant-aws'
 
 Vagrant.configure(2) do |config|
     #    config.vm.box = "aws-dummy"
-    config.vm.provider 'virtualbox' do |virtualbox, override|
+    config.vm.provider 'virtualbox' do |v, override|
+        v.name = "dmoj-judge"
+        v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
+
         config.vm.box = "gbarbieru/xenial"
         config.vm.network "forwarded_port", guest: 80, host: 8082
+        v.memory = 4096
+        v.cpus = 2
     end
     config.vm.provision :shell, path: "bootstrap.sh"
 end

@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-
-source bash /vagrant/envvars.sh
-
 echo -e "\n --- Find all logs in /vagrant/logs ---\n"
 LOGS_DIR=/vagrant/logs
 rm -r $LOGS_DIR
@@ -25,6 +22,7 @@ SITE_DIR=$DMOJ_DIR/site
 FILES_DIR=/vagrant/files
 VIRTUALENV_PATH=/envs/dmoj
 
+adduser dmoj
 
 echo -e "\n --- Setup virtualenv ---\n"
 bash /vagrant/scripts/virtualenv-setup.sh $LOGS_DIR $VIRTUALENV_PATH

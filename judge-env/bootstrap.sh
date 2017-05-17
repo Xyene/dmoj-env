@@ -2,7 +2,7 @@
 
 apt-get update
 apt-get upgrade
-apt-get install -y sudo apt git python-dev python-pip build-essential mono-complete openjdk-9-jdk openjdk-8-jdk
+apt-get install -y sudo apt git python-dev python-pip build-essential mono-complete openjdk-8-jdk
 
 sudo dpkg --configure -a
 pip install --upgrade pip

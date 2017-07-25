@@ -26,4 +26,4 @@ pip install -r requirements.txt
 
 python setup.py develop
 
-dmoj -c /vagrant/judge.yml -p 3000 192.168.43.115 
+dmoj -c /vagrant/judge.yml -p 3000 192.168.43.115

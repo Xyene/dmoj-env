@@ -1,5 +1,5 @@
 id: <Enter NAME from site>
-key: "<Enter the generated key from site>" 
+key: "<Enter the generated key from site>"
 problem_storage_root: problems
 runtime:
   as_x64: /usr/bin/x86_64-linux-gnu-as

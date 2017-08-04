@@ -14,4 +14,6 @@ git clone https://github.com/DMOJ/judge /vagrant/judge
 cd judge
 pip install -r requirements.txt
 
-python setup.py develop && dmoj -c /vagrant/judge.yml "52.28.196.151" WorkPc 1234567890
+python setup.py develop
+
+dmoj -c /vagrant/judge.yml "52.28.196.151" WorkPc 1234567890

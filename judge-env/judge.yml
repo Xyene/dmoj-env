@@ -1,5 +1,5 @@
 problem_storage_root:
-    - 2: /vagrant/problems
+    - 2: /problems
 runtime:
   clang: /usr/bin/clang
   clang++: /usr/bin/clang++

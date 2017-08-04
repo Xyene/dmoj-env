@@ -16,4 +16,8 @@ pip install -r requirements.txt
 
 python setup.py develop
 
+mkdir /problems
+
+git clone https://github.com/cuklev/dsa-miniexam-tasks-dmoj.git /problems
+
 dmoj -c /vagrant/judge.yml "52.28.196.151" WorkPc 1234567890

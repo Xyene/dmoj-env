@@ -1,6 +1,6 @@
 id: <Enter NAME from site>
 key: "<Enter the generated key from site>"
-problem_storage_root: problems
+problem_storage_root: /vagrant/problems
 runtime:
   as_x64: /usr/bin/x86_64-linux-gnu-as
   as_x86: /usr/bin/as

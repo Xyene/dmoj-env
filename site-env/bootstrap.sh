@@ -27,7 +27,7 @@ adduser dmoj
 echo -e "\n --- Setup virtualenv ---\n"
 bash /vagrant/scripts/virtualenv-setup.sh "$LOGS_DIR" "$VIRTUALENV_PATH"
 
-sudo chown -R vagrant:vagrant "$VIRTUALENV_PATH"
+chown -R vagrant:vagrant "$VIRTUALENV_PATH"
 
 source $VIRTUALENV_PATH/bin/activate
 

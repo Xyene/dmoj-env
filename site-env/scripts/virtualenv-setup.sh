@@ -10,4 +10,3 @@ mkdir -p "$VIRTUALENV_PATH" >> "$LOGS_FILE"
 
 virtualenv -p python "$VIRTUALENV_PATH" >> "$LOGS_FILE"
 # source /envs/dmoj/bin/activate >> "$LOGS_FILE"
-

@@ -27,6 +27,11 @@ cd "$SITE_DIR"
 
 echo -e "Creating superuser!"
 
-echo -e "$SUPERUSER_USERNAME\n$SUPERUSER_EMAIL\n$SUPERUSER_PWD\n$SUPERUSER_RPT_PWD" | python manage.py createsuperuser
+python manage.py createsuperuser >> "$LOGS_FILE" << EOF
+$SUPERUSER_USERNAME
+$SUPERUSER_EMAIL
+$SUPERUSER_PWD
+$SUPERUSER_RPT_PWD
+EOF
 
 echo -e "Superuser created!"

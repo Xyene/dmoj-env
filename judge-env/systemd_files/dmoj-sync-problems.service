@@ -1,0 +1,8 @@
+[Unit]
+Description=DMOJ sync problems
+After=network.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/problems
+ExecStart=/usr/bin/git pull

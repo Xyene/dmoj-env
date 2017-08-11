@@ -1,0 +1,10 @@
+[Unit]
+Description=DMOJ sync problems timer
+
+[Timer]
+OnActiveSec=0
+OnUnitInactiveSec=15min
+AccuracySec=3min
+
+[Install]
+WantedBy=multi-user.target

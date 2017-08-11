@@ -18,4 +18,10 @@ python setup.py develop
 
 git clone https://github.com/cuklev/dsa-miniexam-tasks-dmoj.git /problems
 
-dmoj -c /vagrant/judge.yml "52.28.196.151" WorkPc 1234567890
+cp /vagrant/systemd_files/* /etc/systemd/system/
+
+for cmd in enable start; do
+	for unit in dmoj-judge.service dmoj-sync-problems.timer; do
+		systemctl $cmd $unit
+	done
+done

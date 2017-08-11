@@ -5,23 +5,25 @@ SITE_DIR="$2"
 
 cd "$SITE_DIR"
 
-npm install >> "$LOGS_FILE"
+{
+	npm install
 
-# source /envs/dmoj/bin/activate
-pip install -r requirements.txt >> "$LOGS_FILE"
-pip install mysqlclient >> "$LOGS_FILE"
-pip install websocket-client >> "$LOGS_FILE"
+	# source /envs/dmoj/bin/activate
+	pip install -r requirements.txt
+	pip install mysqlclient
+	pip install websocket-client
 
-python manage.py check >> "$LOGS_FILE"
-python manage.py migrate >> "$LOGS_FILE"
+	python manage.py check
+	python manage.py migrate
 
-./make_style.sh >> "$LOGS_FILE"
+	./make_style.sh
 
-echo "yes" | python manage.py collectstatic >> "$LOGS_FILE"
-python manage.py compilemessages >> "$LOGS_FILE"
-python manage.py compilejsi18n >> "$LOGS_FILE"
-python manage.py loaddata navbar >> "$LOGS_FILE"
-python manage.py loaddata language_small >> "$LOGS_FILE"
+	echo "yes" | python manage.py collectstatic
+	python manage.py compilemessages
+	python manage.py compilejsi18n
+	python manage.py loaddata navbar
+	python manage.py loaddata language_small
+} >> "$LOGS_FILE"
 
 echo -e "Creating superuser!"
 

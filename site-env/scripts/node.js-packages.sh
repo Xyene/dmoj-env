@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# LOGS_FILE=$1/`basename "$0"`.log
+# LOGS_FILE="$1/$(basename "$0").log"
 LOGS_FILE=/dev/stdout
 
+exec >> "$LOGS_FILE"
 
 function npm_package_is_installed {
   # set to 1 initially
@@ -14,8 +15,8 @@ function npm_package_is_installed {
 }
 
 if [ $(npm_package_is_installed pleeease-cli) = 1 ]; then
-    echo -e "pleeease-cli is allready installed\n" >> $LOGS_FILE
+    echo -e "pleeease-cli is allready installed\n"
 else
-    echo -e "pleeease-cli is not installed\n" >> $LOGS_FILE
-    npm install -g pleeease-cli >> $LOGS_FILE
+    echo -e "pleeease-cli is not installed\n"
+    npm install -g pleeease-cli
 fi;

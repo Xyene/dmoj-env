@@ -29,7 +29,7 @@ bash /vagrant/scripts/virtualenv-setup.sh "$LOGS_DIR" "$VIRTUALENV_PATH"
 
 chown -R vagrant:vagrant "$VIRTUALENV_PATH"
 
-source $VIRTUALENV_PATH/bin/activate
+source "$VIRTUALENV_PATH/bin/activate"
 
 echo -e "\n --- Checkout web app --- \n"
 bash /vagrant/scripts/checkout-app.sh "$LOGS_DIR" "$SITE_DIR"

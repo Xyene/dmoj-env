@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-LOGS_FILE=$1/`basename "$0"`.log
+LOGS_FILE="$1/$(basename "$0").log"
 
-FILES_DIR=$2
+FILES_DIR="$2"
 
 touch /vagrant/bridge.log
 chmod 777 /vagrant/bridge.log

@@ -1,8 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-LOGS_FILE=$1/`basename "$0"`.log
-SITE_DIR=$2
-cd $SITE_DIR
+LOGS_FILE="$1/$(basename "$0").log"
+SITE_DIR="$2"
+
+cd "$SITE_DIR"
 
 npm install >> "$LOGS_FILE"
 

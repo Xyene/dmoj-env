@@ -12,7 +12,7 @@ echo -e "\n --- Installing Node.js ---\n"
 bash /vagrant/scripts/node.js.sh $LOGS_DIR
 
 echo -e "\n --- Installing Node.js packages ---\n"
-bash /vagrant/scripts/node.js-packages.sh $LOGS_DIR 
+bash /vagrant/scripts/node.js-packages.sh $LOGS_DIR
 
 echo -e "\n --- Installing and Setting up MySQL ---\n"
 bash /vagrant/scripts/mysql.sh $LOGS_DIR

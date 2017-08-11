@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-LOGS_FILE=$1/`basename "$0"`.log
+LOGS_FILE="$1/$(basename "$0").log"
 
 VIRTUALENV_PATH="$2"
 

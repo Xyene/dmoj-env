@@ -6,7 +6,7 @@ FILES_DIR="$2"
 exec >> "$LOGS_FILE"
 
 touch /vagrant/bridge.log
-chmod 777 /vagrant/bridge.log
+chmod 666 /vagrant/bridge.log
 
 cp $FILES_DIR/site.conf /etc/supervisor/conf.d/site.conf
 cp $FILES_DIR/bridged.conf /etc/supervisor/conf.d/bridged.conf

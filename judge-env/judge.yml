@@ -9,10 +9,10 @@ runtime:
   g++11: /usr/bin/g++
   g++14: /usr/bin/g++
   gcc: /usr/bin/gcc
-  java: /usr/lib/jvm/java-7-jdk/bin/java
-  java8: /usr/lib/jvm/java-8-openjdk/bin/java
-  javac: /usr/lib/jvm/java-7-jdk/bin/javac
-  javac8: /usr/lib/jvm/java-8-openjdk/bin/javac
+  java: /usr/bin/java
+  java8: /usr/bin/java
+  javac: /usr/bin/javac
+  javac8: /usr/bin/javac
   mono: /usr/bin/mono
   mono-csc: /usr/bin/mcs
   perl: /usr/bin/perl

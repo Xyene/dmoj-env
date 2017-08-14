@@ -6,6 +6,7 @@ After=network.target
 Type=simple
 User=nobody
 ExecStart=/usr/local/bin/dmoj -c /vagrant/judge.yml 52.28.196.151 WorkPc 1234567890
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

@@ -18,3 +18,4 @@ runtime:
   perl: /usr/bin/perl
   python: /usr/bin/python2.7
   python3: /usr/bin/python3
+  v8dmoj: /opt/v8dmoj_bin/v8dmoj

@@ -9,13 +9,15 @@ runtime:
   g++11: /usr/bin/g++
   g++14: /usr/bin/g++
   gcc: /usr/bin/gcc
-  java: /usr/lib/jvm/java-7-jdk/bin/java
-  java8: /usr/lib/jvm/java-8-openjdk/bin/java
-  javac: /usr/lib/jvm/java-7-jdk/bin/javac
-  javac8: /usr/lib/jvm/java-8-openjdk/bin/javac
+  ghc: /usr/bin/ghc
+  java: /usr/bin/java
+  java8: /usr/bin/java
+  javac: /usr/bin/javac
+  javac8: /usr/bin/javac
   mono: /usr/bin/mono
   mono-csc: /usr/bin/mcs
   perl: /usr/bin/perl
   python: /usr/bin/python2.7
   python3: /usr/bin/python3
+  ruby2: /usr/bin/ruby2.3
   v8dmoj: /opt/v8dmoj_bin/v8dmoj

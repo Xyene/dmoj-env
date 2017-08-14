@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User=nobody
-ExecStart=/usr/local/bin/dmoj -c /vagrant/judge.yml 52.28.196.151 WorkPc 1234567890
+ExecStart=/usr/local/bin/dmoj -c /vagrant/judge.yml 52.28.196.151 %i
 Restart=always
 
 [Install]

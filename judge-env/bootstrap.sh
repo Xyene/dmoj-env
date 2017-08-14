@@ -21,7 +21,7 @@ git clone https://github.com/cuklev/dsa-miniexam-tasks-dmoj.git /problems
 cp /vagrant/systemd_files/* /etc/systemd/system/
 
 for cmd in enable start; do
-	for unit in dmoj-judge.service dmoj-sync-problems.timer; do
+	for unit in dmoj-judge@WorkPc{1..3}.service dmoj-sync-problems.timer; do
 		systemctl $cmd $unit
 	done
 done

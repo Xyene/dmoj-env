@@ -20,4 +20,5 @@ runtime:
   python: /usr/bin/python2.7
   python3: /usr/bin/python3
   ruby2: /usr/bin/ruby2.3
+  swiftc: /opt/swift/usr/bin/swiftc
   v8dmoj: /opt/v8dmoj_bin/v8dmoj

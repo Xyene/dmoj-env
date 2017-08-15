@@ -14,7 +14,7 @@ pip install setuptools
 pip install cython
 
 cd /vagrant
-git clone https://github.com/DMOJ/judge /vagrant/judge
+git clone https://github.com/minkov/judge /vagrant/judge
 cd judge
 pip install -r requirements.txt
 

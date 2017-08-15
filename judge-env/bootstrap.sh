@@ -13,6 +13,12 @@ pip install --upgrade pip
 pip install setuptools
 pip install cython
 
+
+# Swift
+
+wget https://swift.org/builds/swift-4.0-branch/ubuntu1604/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-08-04-a/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-08-04-a-ubuntu16.04.tar.gz -o /dev/null -O - | tar xzf - -C /tmp
+mv /tmp/swift* /opt/swift4
+
 cd /vagrant
 git clone https://github.com/minkov/judge /vagrant/judge
 cd judge

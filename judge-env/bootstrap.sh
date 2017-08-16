@@ -18,7 +18,7 @@ mv /tmp/swift* /opt/swift4
 chown nobody /opt/swift4/usr/lib/swift/CoreFoundation/module.modulemap
 
 cd /vagrant
-if [[ -f v8dmoj_bin.tar.xz ]]; then
+if [[ -d v8dmoj_bin ]]; then
 	echo "v8dmoj found :)"
 	cp -r v8dmoj_bin /opt
 else
@@ -37,7 +37,7 @@ git clone https://github.com/cuklev/dsa-miniexam-tasks-dmoj.git /problems
 cp /vagrant/systemd_files/* /etc/systemd/system/
 
 for cmd in enable start; do
-    for unit in dmoj-judge@AwsJudge{1..3}.service dmoj-sync-problems.timer; do
+    for unit in dmoj-judge@CukiVagrant{1..3}.service dmoj-sync-problems.timer; do
 		systemctl $cmd $unit
 	done
 done

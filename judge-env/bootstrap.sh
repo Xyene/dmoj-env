@@ -18,8 +18,15 @@ mv /tmp/swift* /opt/swift4
 sudo chown nobody /opt/swift4/usr/lib/swift/CoreFoundation/module.modulemap
 
 cd /vagrant
+if [[ -f v8dmoj_bin.tar.xz ]]; then
+	echo "v8dmoj found :)"
+	cp -r v8dmoj_bin /opt
+else
+	echo "v8dmoj not found! You must build it first."
+fi
+
 git clone https://github.com/minkov/judge /vagrant/judge
-cd judge
+cd /vagrant/judge
 
 pip install -r requirements.txt
 

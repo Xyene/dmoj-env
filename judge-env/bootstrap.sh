@@ -3,7 +3,7 @@
 apt-get update
 apt-get upgrade
 apt-get install -y sudo apt git python-dev python-pip build-essential mono-complete openjdk-8-jdk ruby php ghc \
-    clang libicu-dev 
+    clang libicu-dev
 
 pip install --upgrade pip
 
@@ -31,7 +31,6 @@ cp /vagrant/systemd_files/* /etc/systemd/system/
 
 for cmd in enable start; do
     for unit in dmoj-judge@AwsJudge{1..3}.service dmoj-sync-problems.timer; do
-
 		systemctl $cmd $unit
 	done
 done

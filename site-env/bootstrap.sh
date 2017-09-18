@@ -113,7 +113,7 @@ echo -e "Superuser created!"
 mkdir -p /vagrant/files
 cd /vagrant/files
 
-curl http://uwsgi.it/install | bash -s default "$PWD/uwsgi" >> "$LOGS_DIR/uwsgi.log"
+curl -s http://uwsgi.it/install | bash -s default "$PWD/uwsgi" >> "$LOGS_DIR/uwsgi.log"
 
 echo -e "\n --- Setup Supervisor and nginx ---\n"
 {

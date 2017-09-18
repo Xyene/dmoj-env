@@ -15,7 +15,7 @@ function npm_package_is_installed {
 }
 
 if [ $(npm_package_is_installed pleeease-cli) = 1 ]; then
-    echo -e "pleeease-cli is allready installed\n"
+    echo -e "pleeease-cli is already installed\n"
 else
     echo -e "pleeease-cli is not installed\n"
     npm install -g pleeease-cli

@@ -5,6 +5,9 @@ echo -e "\n --- Find all logs in $LOGS_DIR ---\n"
 rm -rf "$LOGS_DIR"
 mkdir -p "$LOGS_DIR"
 
+echo -e "\n --- Stopping ubuntu daily update service ---\n"
+systemctl stop apt-daily.service
+
 echo -e "\n --- Installing apt-get dependendies ---\n"
 {
 	apt-get update
@@ -21,12 +24,12 @@ echo -e "\n --- Installing Node.js ---\n"
 
 echo -e "\n --- Installing Node.js packages ---\n"
 function npm_package_is_installed {
-  # set to 1 initially
-  local return_=1
-  # set to 0 if not found
-  npm list -g --depth=0 | grep $1 >/dev/null 2>&1 || { local return_=0; }
-  # return value
-  echo "$return_"
+	# set to 1 initially
+	local return_=1
+	# set to 0 if not found
+	npm list -g --depth=0 | grep $1 >/dev/null 2>&1 || { local return_=0; }
+	# return value
+	echo "$return_"
 }
 
 {
@@ -83,6 +86,8 @@ echo -e "\n --- Setup web app ---\n"
 source "$VIRTUALENV_PATH/bin/activate"
 
 {
+	cd "$SITE_DIR"
+
 	npm install
 
 	pip install -r requirements.txt

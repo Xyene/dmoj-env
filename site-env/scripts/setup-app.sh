@@ -2,13 +2,15 @@
 
 LOGS_FILE="$1/$(basename "$0").log"
 SITE_DIR="$2"
+VIRTUALENV_PATH="$3"
 
 cd "$SITE_DIR"
+
+source "$VIRTUALENV_PATH/bin/activate"
 
 {
 	npm install
 
-	# source /envs/dmoj/bin/activate
 	pip install -r requirements.txt
 	pip install mysqlclient
 	pip install websocket-client

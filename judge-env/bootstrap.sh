@@ -12,7 +12,7 @@ pip install cython
 
 # Swift
 
-wget https://swift.org/builds/swift-4.0-branch/ubuntu1604/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-08-04-a/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-08-04-a-ubuntu16.04.tar.gz -o /dev/null -O - | tar xzf - -C /tmp
+wget https://swift.org/builds/swift-4.0.2-release/ubuntu1610/swift-4.0.2-RELEASE/swift-4.0.2-RELEASE-ubuntu16.10.tar.gz -o /dev/null -O - | tar xzf - -C /tmp
 mv /tmp/swift* /opt/swift4
 
 chown nobody /opt/swift4/usr/lib/swift/CoreFoundation/module.modulemap
@@ -37,7 +37,7 @@ git clone https://github.com/cuklev/dsa-miniexam-tasks-dmoj.git /problems
 cp /vagrant/systemd_files/* /etc/systemd/system/
 
 for cmd in enable start; do
-    for unit in dmoj-judge@CukiVagrant{1..3}.service dmoj-sync-problems.timer; do
+    for unit in dmoj-judge@Local.service dmoj-sync-problems.timer; do
 		systemctl $cmd $unit
 	done
 done

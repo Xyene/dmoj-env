@@ -8,7 +8,7 @@ mkdir -p "$LOGS_DIR"
 echo -e "\n --- Stopping ubuntu daily update service ---\n"
 systemctl stop apt-daily.service
 
-echo -e "\n --- Installing apt-get dependendies ---\n"
+echo -e "\n --- Installing apt-get dependencies ---\n"
 {
 	apt-get update
 	apt-get install -y supervisor nginx git gcc g++ make python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev ruby-sass gettext curl
@@ -55,8 +55,7 @@ echo -e "\n --- Installing and Setting up MySQL ---\n"
 	systemctl restart mysql
 } >> "$LOGS_DIR/mysql.log"
 
-DMOJ_DIR=/vagrant/dmoj
-SITE_DIR=$DMOJ_DIR/site
+SITE_DIR=/vagrant/site
 FILES_DIR=/vagrant/files
 VIRTUALENV_PATH=/envs/dmoj
 
@@ -75,7 +74,7 @@ echo -e "\n --- Setup virtualenv ---\n"
 
 echo -e "\n --- Checkout web app --- \n"
 {
-	git clone https://github.com/Minkov/site.git "$SITE_DIR"
+	git clone https://github.com/DMOJ/site.git "$SITE_DIR"
 	cd "$SITE_DIR"
 	git pull
 	git submodule init
@@ -94,6 +93,8 @@ source "$VIRTUALENV_PATH/bin/activate"
 	pip install mysqlclient
 	pip install websocket-client
 
+	cp $FILES_DIR/local_settings.py /vagrant/site/dmoj/local_settings.py
+
 	python manage.py check
 	python manage.py migrate
 
@@ -104,13 +105,8 @@ source "$VIRTUALENV_PATH/bin/activate"
 	python manage.py compilejsi18n
 	python manage.py loaddata navbar
 	python manage.py loaddata language_small
+	python manage.py loaddata demo
 
-	python manage.py createsuperuser << EOF
-$SUPERUSER_USERNAME
-$SUPERUSER_EMAIL
-$SUPERUSER_PWD
-$SUPERUSER_RPT_PWD
-EOF
 } >> "$LOGS_DIR/setup-app.log"
 
 echo -e "Superuser created!"
@@ -128,6 +124,7 @@ echo -e "\n --- Setup Supervisor and nginx ---\n"
 	cp $FILES_DIR/site.conf /etc/supervisor/conf.d/site.conf
 	cp $FILES_DIR/bridged.conf /etc/supervisor/conf.d/bridged.conf
 	cp $FILES_DIR/nginx.conf /etc/nginx/conf.d/nginx.conf
+	sed -i 's|# server_names_hash_bucket_size 64;|server_names_hash_bucket_size 265;|g' /etc/nginx/nginx.conf
 
 	systemctl restart supervisor
 	systemctl restart nginx

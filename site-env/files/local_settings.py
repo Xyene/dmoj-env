@@ -236,19 +236,13 @@ TIMEZONE_MAP = 'http://naturalearth.springercarto.com/ne3_data/8192/textures/3_n
 # Set to 2 to make https URLs canonical.
 #DMOJ_HTTPS = 0
 
-## PDF rendering settings.
-# Directory to cache the PDF.
-#PROBLEM_PDF_CACHE = '/home/dmoj-uwsgi/pdfcache'
-
 # Path to use for nginx's X-Accel-Redirect feature.
 # Should be an internal location mapped to the above directory.
 #PROBLEM_PDF_INTERNAL = '/pdfcache'
 
-# Path to a PhantomJS executable.
-#PHANTOMJS = '/usr/local/bin/phantomjs'
+PHANTOMJS = '/opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs'
+PROBLEM_PDF_CACHE = '/tmp'
 
-# If you can't use PhantomJS or prefer wkhtmltopdf, set the path to wkhtmltopdf executable instead.
-#WKHTMLTOPDF = '/usr/local/bin/wkhtmltopdf'
 
 # Note that PhantomJS is preferred over wkhtmltopdf and would be used when both are defined.
 

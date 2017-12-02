@@ -11,7 +11,7 @@ systemctl stop apt-daily.service
 echo -e "\n --- Installing apt-get dependencies ---\n"
 {
 	apt-get update
-	apt-get install -y supervisor nginx git gcc g++ make python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev ruby-sass gettext curl
+	apt-get install -y nano supervisor nginx git gcc g++ make python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev ruby-sass gettext curl
 
 	pip install --upgrade pip
 } >> "$LOGS_DIR/dependencies.log"
@@ -54,6 +54,13 @@ echo -e "\n --- Installing and Setting up MySQL ---\n"
 
 	systemctl restart mysql
 } >> "$LOGS_DIR/mysql.log"
+
+echo -e "\n --- Installing PhantomJS ---\n"
+{
+	cd /opt
+	wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+	tar xvf phantomjs-2.1.1-linux-x86_64.tar.bz2
+} >> "$LOGS_DIR/phantomjs.log"
 
 SITE_DIR=/vagrant/site
 FILES_DIR=/vagrant/files

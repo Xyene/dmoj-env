@@ -126,11 +126,10 @@ STATICFILES_FINDERS += ('compressor.finders.CompressorFinder',)
 # A tuple of (name, email) pairs that specifies those who will be mailed
 # when the server experiences an error when DEBUG = False.
 ADMINS = (
-    ('Doncho Minkov', 'minkov'),
 )
 
 # The sender for the aforementioned emails.
-SERVER_EMAIL = 'Telerik Academy Judge <judge@telerikacademy.com>'
+# SERVER_EMAIL = 'Telerik Academy Judge <judge@telerikacademy.com>'
 
 
 ##################################################
@@ -156,8 +155,8 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStora
 
 ## DMOJ site display settings.
 SITE_NAME = 'DMOJ'
-SITE_LONG_NAME = 'Telerik Academy Judge'
-SITE_ADMIN_EMAIL = 'judge@telerikacademy.com'
+SITE_LONG_NAME = 'DMOJ: Modern Online Judge'
+SITE_ADMIN_EMAIL = 'admin@example.com'
 TERMS_OF_SERVICE_URL = '//dmoj.ca/tos' # Use a flatpage.
 
 ## Bridge controls.
